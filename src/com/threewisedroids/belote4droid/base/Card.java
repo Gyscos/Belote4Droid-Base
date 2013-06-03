@@ -16,12 +16,12 @@ public class Card {
     public final static int face_A        = 7;
     public final static int face_count    = 8;
 
-    public static int getColor(long card) {
-        return (int) (card / face_count);
+    public static int getColor(int card) {
+        return card / face_count;
     }
 
-    public static int getFace(long card) {
-        return (int) (card % face_count);
+    public static int getFace(int card) {
+        return card % face_count;
     }
 
     public static int getFaceStrength(int face, boolean trump) {
@@ -71,7 +71,7 @@ public class Card {
         }
     }
 
-    public static long makeCard(int color, int face) {
-        return face + (long) (color) * face_count;
+    public static int makeCard(int color, int face) {
+        return face + color * face_count;
     }
 }

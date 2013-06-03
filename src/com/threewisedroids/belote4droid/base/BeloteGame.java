@@ -64,12 +64,12 @@ public class BeloteGame {
         return winner;
     }
 
-    int getCardStrength(long card) {
+    int getCardStrength(int card) {
         return Card.getFaceStrength(Card.getFace(card),
                 Card.getColor(card) == trump);
     }
 
-    int getCardValue(long card) {
+    int getCardValue(int card) {
         return Card.getFaceValue(Card.getFace(card),
                 Card.getColor(card) == trump);
     }
@@ -88,7 +88,7 @@ public class BeloteGame {
         currentPlayer %= 4;
     }
 
-    void playCard(long card) {
+    void playCard(int card) {
         // The current player play the given card.
         currentTrick.cards[currentPlayer] = card;
         // Trigger event...
